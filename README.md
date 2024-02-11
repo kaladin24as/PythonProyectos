@@ -1,70 +1,53 @@
-# PythonProyectos
-
----
-
-# <span style="color:red">Sistema de Gestión, VERSION 0.1</span>
-
-El proyecto consiste en el desarrollo de un Sistema de Gestión Bancaria utilizando el lenguaje de programación Python y la biblioteca PyQt6 para la interfaz gráfica de usuario (GUI). El objetivo principal del sistema es proporcionar funcionalidades básicas para la gestión de usuarios, depósitos y transferencias dentro de un banco.
+# Sistema de gestión, versión 0.1
 
 ## Componentes del proyecto
 
 ### Interfaz de Usuario (UI)
-La interfaz de usuario se implementa utilizando archivos .ui que se crean con la herramienta Qt Designer y se convierten a código Python utilizando el módulo uic de PyQt6. La interfaz consta de varias ventanas que permiten al usuario acceder al sistema, registrar usuarios, realizar transferencias y realizar depósitos.
+La parte visual del proyecto está hecha con archivos .ui generados en Qt Designer y luego convertidos a código Python con PyQt6. Hay varias ventanas que permiten al usuario interactuar con el sistema, desde el inicio de sesión hasta la realización de transacciones.
 
 ### Clases de Datos (Data Classes)
-Estas clases se encargan de interactuar con la base de datos SQLite para realizar operaciones como la creación de tablas, inserción de datos y consultas. Incluye las siguientes clases:
-- **UsuarioData**: Gestiona la creación y autenticación de usuarios.
-- **DepositoData**: Administra los depósitos realizados por los usuarios.
-- **TransferenciaData**: Gestiona las transferencias de fondos entre cuentas.
-- **PaisesData**: Proporciona la lista de países para su selección en el formulario de depósito.
+Estas clases manejan la interacción con la base de datos SQLite, desde la creación de tablas hasta la inserción y consulta de datos. Tenemos clases para usuarios, depósitos, transferencias y también una para la lista de países.
 
 ### Modelos de Datos (Data Models)
-Estas clases representan los objetos de datos utilizados en la aplicación. Incluye los modelos `Usuario`, `Deposito` y `Transferencia`.
+Representan los objetos que usamos en la aplicación, como Usuarios, Depósitos y Transferencias.
 
 ### Conexión a la Base de Datos
-La clase `Conexion` se encarga de establecer la conexión con la base de datos SQLite y crear las tablas necesarias en caso de que no existan.
+Una clase que establece la conexión con SQLite y crea las tablas necesarias.
 
 ### Clase Principal y Ejecución
-La clase `Banco` inicializa la aplicación PyQt6 y muestra la ventana de inicio de sesión (`Login`). Desde aquí, los usuarios pueden acceder al sistema y realizar diferentes operaciones bancarias.
+Una clase que inicia la aplicación y muestra la ventana de inicio de sesión.
 
 ## Funcionalidades principales
 
-- **Inicio de Sesión**: Los usuarios pueden iniciar sesión utilizando un nombre de usuario y una contraseña. Se valida la autenticidad de las credenciales ingresadas antes de permitir el acceso al sistema.
-- **Registro de Usuarios**: Los usuarios pueden registrarse en el sistema proporcionando un nombre de usuario único y una contraseña.
-- **Registro de Depósitos**: Los usuarios pueden realizar depósitos de fondos en sus cuentas bancarias, especificando el monto, tipo de documento, motivo, entre otros datos relevantes.
-- **Registro de Transferencias**: Los usuarios pueden transferir fondos entre cuentas bancarias, especificando el monto, tipo de documento, motivo, entre otros datos relevantes.
+- **Inicio de Sesión**: Los usuarios pueden ingresar con su nombre de usuario y contraseña.
+- **Registro de Usuarios**: Se pueden crear nuevas cuentas de usuario.
+- **Depósitos**: Los usuarios pueden agregar fondos a sus cuentas.
+- **Transferencias**: Permiten enviar dinero entre cuentas bancarias.
 
 ## Consideraciones técnicas
 
-- El proyecto utiliza el patrón de diseño Modelo-Vista-Controlador (MVC) para separar la lógica de la aplicación de la interfaz de usuario.
-- Se implementa una base de datos SQLite para el almacenamiento de datos, lo que facilita la portabilidad y el mantenimiento del sistema.
-- La aplicación utiliza PyQt6 para la creación de la interfaz gráfica de usuario, lo que permite una experiencia de usuario intuitiva y amigable.
+- Utilizamos el patrón Modelo-Vista-Controlador (MVC) para organizar nuestro código.
+- La base de datos SQLite nos brinda portabilidad y facilidad de mantenimiento.
+- PyQt6 nos ayuda a crear una interfaz amigable.
 
 ## Posibles Mejoras
 
-- Mejorar la apariencia de las interfaces, para hacerlas mas amigables.
-- Implementar encriptación de contraseñas para mayor seguridad.
-- Agregar funcionalidades avanzadas como transferencias internacionales y pago de servicios.
-- Mejorar la validación de datos en formularios para una experiencia de usuario más robusta.
-- Implementar un sistema de registro de auditoría para el seguimiento de acciones realizadas por los usuarios.
-- Integrar un sistema de notificaciones para informar a los usuarios sobre eventos importantes.
+- Mejorar la apariencia de la interfaz.
+- Encriptar las contraseñas para mayor seguridad.
+- Agregar funciones avanzadas como transferencias internacionales.
+- Validar los datos de entrada de forma más robusta.
+- Implementar un sistema de registro de auditoría.
 
 ## Lecciones Aprendidas
 
-- Aprendizaje sobre el diseño de interfaces gráficas de usuario utilizando PyQt6.
-- Experiencia en el desarrollo de aplicaciones de gestión utilizando Python y SQLite.
-- Comprensión de patrones de diseño como Modelo-Vista-Controlador (MVC) para una arquitectura de software escalable y mantenible.
-- Conocimiento adquirido sobre buenas prácticas de seguridad, como la gestión adecuada de contraseñas y la protección contra inyecciones de SQL.
-- Experiencia en la implementación de pruebas de unidad y depuración para garantizar el correcto funcionamiento del sistema.
+- Aprender sobre interfaces gráficas con PyQt6.
+- Experiencia en desarrollo de aplicaciones con Python y SQLite.
+- Entender el patrón MVC para una arquitectura de software sólida.
+- Buenas prácticas de seguridad en la gestión de contraseñas y protección contra ataques SQL.
+- Importancia de pruebas y depuración para un sistema confiable.
 
 ## Vulnerabilidad a Inyección SQL
-El proyecto descrito es vulnerable a ataques de inyección SQL debido a la construcción de consultas SQL sin el uso de consultas parametrizadas o preparadas. Esto se observa especialmente en el método login de la clase UsuarioData.
 
-En este método, la consulta SQL se construye concatenando directamente los valores de usuario y contraseña ingresados por el usuario en la cadena de consulta. Esto puede permitir a un atacante manipular los datos de entrada para ejecutar comandos SQL no deseados.
-
-### Ejemplo de Mejora:
-
-Para mitigar esta vulnerabilidad, se pueden implementar consultas parametrizadas. Esto implica pasar los valores de usuario y contraseña como parámetros separados de la consulta SQL. Así, los datos del usuario no se interpretan como parte de la consulta SQL y se evita la ejecución de comandos maliciosos.
-
+Hemos identificado una posible vulnerabilidad en el método de inicio de sesión debido a la construcción de consultas SQL sin parámetros. 
 
 
