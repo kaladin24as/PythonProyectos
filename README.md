@@ -1,6 +1,8 @@
 # PythonProyectos
 
-# Sistema de Gestión, VERSION 0.1
+---
+
+# <span style="color:red">Sistema de Gestión, VERSION 0.1</span>
 
 El proyecto consiste en el desarrollo de un Sistema de Gestión Bancaria utilizando el lenguaje de programación Python y la biblioteca PyQt6 para la interfaz gráfica de usuario (GUI). El objetivo principal del sistema es proporcionar funcionalidades básicas para la gestión de usuarios, depósitos y transferencias dentro de un banco.
 
