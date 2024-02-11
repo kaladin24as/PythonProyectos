@@ -62,7 +62,7 @@ El proyecto descrito es vulnerable a ataques de inyección SQL debido a la const
 
 En este método, la consulta SQL se construye concatenando directamente los valores de usuario y contraseña ingresados por el usuario en la cadena de consulta. Esto puede permitir a un atacante manipular los datos de entrada para ejecutar comandos SQL no deseados.
 
-# Ejemplo de Mejora:
+### Ejemplo de Mejora:
 
 Para mitigar esta vulnerabilidad, se pueden implementar consultas parametrizadas. Esto implica pasar los valores de usuario y contraseña como parámetros separados de la consulta SQL. Así, los datos del usuario no se interpretan como parte de la consulta SQL y se evita la ejecución de comandos maliciosos.
 
