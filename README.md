@@ -39,3 +39,21 @@ La clase `Banco` inicializa la aplicación PyQt6 y muestra la ventana de inicio 
 - El proyecto utiliza el patrón de diseño Modelo-Vista-Controlador (MVC) para separar la lógica de la aplicación de la interfaz de usuario.
 - Se implementa una base de datos SQLite para el almacenamiento de datos, lo que facilita la portabilidad y el mantenimiento del sistema.
 - La aplicación utiliza PyQt6 para la creación de la interfaz gráfica de usuario, lo que permite una experiencia de usuario intuitiva y amigable.
+
+## Posibles Mejoras
+
+- Mejorar la apariencia de las interfaces, para hacerlas mas amigables.
+- Implementar encriptación de contraseñas para mayor seguridad.
+- Agregar funcionalidades avanzadas como transferencias internacionales y pago de servicios.
+- Mejorar la validación de datos en formularios para una experiencia de usuario más robusta.
+- Implementar un sistema de registro de auditoría para el seguimiento de acciones realizadas por los usuarios.
+- Integrar un sistema de notificaciones para informar a los usuarios sobre eventos importantes.
+
+## Lecciones Aprendidas
+
+- Aprendizaje sobre el diseño de interfaces gráficas de usuario utilizando PyQt6.
+- Experiencia en el desarrollo de aplicaciones de gestión utilizando Python y SQLite.
+- Comprensión de patrones de diseño como Modelo-Vista-Controlador (MVC) para una arquitectura de software escalable y mantenible.
+- Conocimiento adquirido sobre buenas prácticas de seguridad, como la gestión adecuada de contraseñas y la protección contra inyecciones de SQL.
+- Experiencia en la implementación de pruebas de unidad y depuración para garantizar el correcto funcionamiento del sistema.
+
