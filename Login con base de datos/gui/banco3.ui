@@ -170,6 +170,9 @@ QLineEdit:hover {
 
 </string>
           </property>
+          <property name="placeholderText">
+           <string>Ingrese Usuario</string>
+          </property>
          </widget>
         </item>
         <item row="1" column="0" colspan="2">
@@ -211,8 +214,14 @@ QLineEdit:hover {
 }
 </string>
           </property>
+          <property name="text">
+           <string/>
+          </property>
           <property name="echoMode">
            <enum>QLineEdit::PasswordEchoOnEdit</enum>
+          </property>
+          <property name="placeholderText">
+           <string>Ingrese Contraseña</string>
           </property>
          </widget>
         </item>
