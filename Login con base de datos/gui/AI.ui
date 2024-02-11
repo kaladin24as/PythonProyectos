@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>484</width>
+    <height>406</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(25,25, 40);</string>
+  </property>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>80</y>
+     <width>191</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* Estilo para el QLineEdit */
+QLineEdit {
+    color: rgb(231, 231, 231);
+    font: 15pt &quot;Verdana&quot;;
+    border: None;
+    border-bottom-color: white;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: rgb(51, 255, 102); /* Verde fosforescente */
+    selection-background-color: darkgray;
+}
+
+QLineEdit:focus {
+    border: 2px solid #00ff00; /* Borde verde fosforescente cuando el QLineEdit está enfocado */
+}
+
+QLineEdit:hover {
+    border-bottom-color: #00ff00; /* Borde inferior verde fosforescente cuando el mouse está sobre el QLineEdit */
+}
+
+/* Agregar sombra */
+QLineEdit {
+    box-shadow: 2px 2px 6px rgba(0, 255, 0, 0.5); /* Sombra verde fosforescente */
+}
+
+/* Estilo para el QPushButton */
+QPushButton {
+    color: rgb(231, 231, 231);
+    font: 15pt &quot;Verdana&quot;;
+    border: None;
+    border-radius: 10px;
+    padding: 10px 20px;
+    background: rgb(51, 255, 102); /* Verde fosforescente */
+}
+
+QPushButton:hover {
+    background: rgb(102, 255, 153); /* Verde fosforescente más claro al pasar el mouse */
+}
+
+QPushButton:pressed {
+    background: rgb(0, 204, 102); /* Verde fosforescente más oscuro cuando se presiona */
+}
+
+/* Agregar sombra */
+QPushButton {
+    box-shadow: 2px 2px 6px rgba(0, 255, 0, 0.5); /* Sombra verde fosforescente */
+}
+
+
+</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>--- Seleccione una opcion</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Carnet de identidad</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Pasaporte</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Visa</string>
+    </property>
+   </item>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

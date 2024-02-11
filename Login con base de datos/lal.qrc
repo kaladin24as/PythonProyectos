@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="xy">
+    <file>circulo-de-usuario.png</file>
+  </qresource>
+</RCC>
